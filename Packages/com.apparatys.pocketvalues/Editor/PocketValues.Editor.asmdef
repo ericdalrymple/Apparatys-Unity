@@ -1,0 +1,17 @@
+{
+    "name": "PocketValues.Editor",
+    "references": [
+        "GUID:97a06a04cca4c7f408af89ba6e7e8824"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

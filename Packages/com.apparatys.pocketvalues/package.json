@@ -1,0 +1,11 @@
+{
+  "name": "com.apparatys.pocketvalues",
+  "version": "0.0.2",
+  "displayName": "Pocket Values",
+  "description": "",
+  "unity": "2017.1",
+  "author": {
+    "name": "Eric Dalrymple",
+    "email": "eric.dalrymple@gmail.com"
+  }
+}
