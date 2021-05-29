@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PocketValues
+namespace Apparatys.PocketValues
 {
     public abstract class Variable<ValueType>
     : BaseVariable

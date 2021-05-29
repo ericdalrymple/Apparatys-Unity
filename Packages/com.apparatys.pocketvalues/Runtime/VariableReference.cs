@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace PocketValues
+namespace Apparatys.PocketValues
 {
     [Serializable]
     public class VariableReference<VariableType, ValueType>

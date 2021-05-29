@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PocketValues.Types
+namespace Apparatys.PocketValues.Types
 {
     [Serializable]
     public sealed class StringReference

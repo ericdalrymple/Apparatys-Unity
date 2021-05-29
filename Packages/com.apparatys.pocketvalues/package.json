@@ -2,10 +2,11 @@
   "name": "com.apparatys.pocketvalues",
   "version": "0.0.2",
   "displayName": "Pocket Values",
-  "description": "",
+  "description": "A package that provides support and tooling for referencable values defined in scriptable objects. Serialized reference fields can be overridden by types values.",
   "unity": "2017.1",
   "author": {
     "name": "Eric Dalrymple",
     "email": "eric.dalrymple@gmail.com"
-  }
+  },
+  "type": "library"
 }

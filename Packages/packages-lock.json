@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.apparatys.navigator": {
+      "version": "file:com.apparatys.navigator",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.apparatys.pocketvalues": {
       "version": "file:com.apparatys.pocketvalues",
       "depth": 0,

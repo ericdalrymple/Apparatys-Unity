@@ -1,0 +1,12 @@
+{
+  "name": "com.apparatys.navigator",
+  "version": "0.0.1",
+  "displayName": "Navigator",
+  "description": "A package that provides a framework for effectively navigating UI.",
+  "unity": "2020.3",
+  "author": {
+    "name": "Eric Dalrymple",
+    "email": "eric.dalrymple@gmail.com"
+  },
+  "type": "library"
+}
