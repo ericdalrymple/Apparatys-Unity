@@ -1,7 +1,7 @@
 {
   "name": "com.apparatys.navigator",
   "version": "0.0.1",
-  "displayName": "Navigator",
+  "displayName": "Apparatys Navigator",
   "description": "A package that provides a framework for effectively navigating UI.",
   "unity": "2020.3",
   "author": {
