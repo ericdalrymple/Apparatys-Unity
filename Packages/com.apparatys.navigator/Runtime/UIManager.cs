@@ -75,7 +75,7 @@ namespace Apparatys.Navigator
             m_ViewLookup.Clear();
         }
 
-        public BaseUIView ShowDialog(UIHandle viewHandle, IUIController controller)
+        public BaseUIView ShowView(UIHandle viewHandle, IUIController controller)
         {
             if (viewHandle == null)
             {
