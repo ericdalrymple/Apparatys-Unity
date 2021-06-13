@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.apparatys.data": {
+      "version": "file:com.apparatys.data",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.apparatys.navigator": {
       "version": "file:com.apparatys.navigator",
       "depth": 0,

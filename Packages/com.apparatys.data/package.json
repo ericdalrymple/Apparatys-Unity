@@ -1,0 +1,12 @@
+{
+  "name": "com.apparatys.data",
+  "version": "0.0.1",
+  "displayName": "Apparatys Data",
+  "description": "A package that provides support for decoupled data editable in Unity.",
+  "unity": "2020.3",
+  "author": {
+    "name": "Eric Dalrymple",
+    "email": "eric.dalrymple@gmail.com"
+  },
+  "type": "library"
+}
