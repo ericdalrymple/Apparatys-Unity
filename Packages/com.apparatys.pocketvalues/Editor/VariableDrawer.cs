@@ -1,7 +1,8 @@
-﻿using UnityEditor;
+﻿using Apparatys.PocketValues;
+using UnityEditor;
 using UnityEngine;
 
-namespace Apparatys.PocketValues.Editor
+namespace Apparatys.PocketValuesEditor
 {
     [CustomPropertyDrawer(typeof(BaseVariableReference), true)]
     public class VariableDrawer
