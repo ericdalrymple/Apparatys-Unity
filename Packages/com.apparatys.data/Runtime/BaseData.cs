@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 
 namespace Apparatys.Data
@@ -5,8 +6,10 @@ namespace Apparatys.Data
     [Serializable]
     public abstract class BaseData : IData
     {
-        DataId m_Id = new DataId();
+        [JsonProperty]
+        private DataId m_Id = DataId.Generate();
 
+        [JsonIgnore]
         public override DataId Id
         {
             get { return m_Id; }
