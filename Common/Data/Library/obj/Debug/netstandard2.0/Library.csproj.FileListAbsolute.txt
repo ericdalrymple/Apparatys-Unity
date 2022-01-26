@@ -1,0 +1,8 @@
+S:\Workshop\ApparatysLibraries\Common\Data\Library\bin\Debug\netstandard2.0\Library.deps.json
+S:\Workshop\ApparatysLibraries\Common\Data\Library\bin\Debug\netstandard2.0\Library.dll
+S:\Workshop\ApparatysLibraries\Common\Data\Library\bin\Debug\netstandard2.0\Library.pdb
+S:\Workshop\ApparatysLibraries\Common\Data\Library\obj\Debug\netstandard2.0\Library.csprojAssemblyReference.cache
+S:\Workshop\ApparatysLibraries\Common\Data\Library\obj\Debug\netstandard2.0\Library.AssemblyInfoInputs.cache
+S:\Workshop\ApparatysLibraries\Common\Data\Library\obj\Debug\netstandard2.0\Library.AssemblyInfo.cs
+S:\Workshop\ApparatysLibraries\Common\Data\Library\obj\Debug\netstandard2.0\Library.dll
+S:\Workshop\ApparatysLibraries\Common\Data\Library\obj\Debug\netstandard2.0\Library.pdb

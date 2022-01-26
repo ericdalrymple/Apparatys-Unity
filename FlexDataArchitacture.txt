@@ -1,0 +1,41 @@
+Flex Data Architacture
+
+Pillars
+	- Easy to serialize/deserialize.
+	- Easy to create and edit.
+	- Easy to instantiate in code.
+	- Easy to version.
+	- Strongly typed.
+	- No code duplication.
+	- Unified server and client code.
+
+
+Physical Structure
+
+	Game Data Project
+		- DataFramework.dll
+		- GameData\
+			**\*.cs
+
+	Server Application:
+		- DataFramework.dll
+		- GameData.dll
+		- HostedGameData\
+			Content\
+				...
+			GameDataManifest.json
+
+
+	Client Application:
+		- DataFramework.dll
+		- GameData.dll
+		- PackagedGameData\
+			Content\
+				...
+			GameDataManifest.json
+
+	Tool/Editor:
+		- DataFramework.dll
+		- GameData.dll
+		- GameDataInterface\
+			**\*.*
