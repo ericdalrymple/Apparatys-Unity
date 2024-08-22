@@ -16,6 +16,13 @@ namespace Apparatys.Data
             get { return m_Id; }
         }
 
+        [JsonIgnore]
+        public T Value
+        {
+            // TODO: Implement dereferencer.
+            get { return null; }
+        }
+
         public DataReference()
         {
             // Serialization constructor
