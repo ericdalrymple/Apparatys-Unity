@@ -1,0 +1,12 @@
+{
+  "name": "com.apparatys.dependencies",
+  "version": "0.0.1",
+  "displayName": "Apparatys Dependencies",
+  "description": "A package that provides support for dependency injection.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Eric Dalrymple",
+    "email": "eric.dalrymple@gmail.com"
+  },
+  "type": "library"
+}

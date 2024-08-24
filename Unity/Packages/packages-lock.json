@@ -6,6 +6,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.apparatys.dependencies": {
+      "version": "file:com.apparatys.dependencies",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.apparatys.navigator": {
       "version": "file:com.apparatys.navigator",
       "depth": 0,
