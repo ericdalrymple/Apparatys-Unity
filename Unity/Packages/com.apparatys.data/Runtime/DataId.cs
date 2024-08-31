@@ -20,10 +20,10 @@ namespace Apparatys.Data
         public static bool operator !=(DataId a, DataId b)
             => !Enumerable.SequenceEqual(a.m_Id, b.m_Id);
 
-        internal static DataId Generate()
+        public static DataId New()
         {
             DataId newId = new DataId();
-            newId.Initialize();
+            newId.InitializeNew();
             return newId;
         }
 
@@ -96,7 +96,7 @@ namespace Apparatys.Data
 
         #endregion
 
-        internal void Initialize()
+        internal void InitializeNew()
         {
             m_Id = Guid.NewGuid().ToByteArray();
         }
