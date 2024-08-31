@@ -7,7 +7,7 @@ namespace Apparatys.Data
     public abstract class BaseData : IData
     {
         [JsonProperty]
-        private DataId m_Id = DataId.Generate();
+        private DataId m_Id = DataId.New();
 
         [JsonIgnore]
         public override DataId Id

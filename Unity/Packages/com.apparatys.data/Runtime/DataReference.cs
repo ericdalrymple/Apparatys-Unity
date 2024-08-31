@@ -8,7 +8,7 @@ namespace Apparatys.Data
         where T : IData
     {
         [JsonProperty]
-        private DataId m_Id;
+        private DataId m_Id = new DataId();
 
         [JsonIgnore]
         public override DataId Id
