@@ -1,7 +1,7 @@
 namespace Apparatys.Dependencies
 {
     public struct Dependency<T>
-        where T : IDependable
+        where T : class, IDependable
     {
         public T Value
         {

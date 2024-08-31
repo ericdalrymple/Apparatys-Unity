@@ -7,7 +7,7 @@ namespace Apparatys.Dependencies
     {
         private static Dictionary<Type, IDependable> m_Dependables = new Dictionary<Type, IDependable>();
 
-        internal static T GetDependable<T>() where T : IDependable
+        internal static T GetDependable<T>() where T : class, IDependable
         {
             T result = null;
 

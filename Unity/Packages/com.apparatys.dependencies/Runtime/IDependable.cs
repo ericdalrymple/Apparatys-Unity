@@ -1,6 +1,6 @@
 namespace Apparatys.Dependencies
 {
-    public class IDependable
+    public interface IDependable
     {
         
     }
