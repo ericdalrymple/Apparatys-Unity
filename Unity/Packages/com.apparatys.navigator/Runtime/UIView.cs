@@ -13,10 +13,10 @@ namespace Apparatys.Navigator
                 return m_Controller;
             }
 
-            set
+            internal set
             {
                 bool validType = typeof(ControllerType).IsAssignableFrom(value.GetType());
-                Assert.IsTrue(validType);
+                Assert.IsTrue(validType, $"Cannot assign controller of type '{value.GetType().FullName}' to view of type '{this.GetType().FullName}'. Expected '{typeof(ControllerType).FullName}'.");
                 if (validType)
                 {
                     m_Controller = (ControllerType)value;

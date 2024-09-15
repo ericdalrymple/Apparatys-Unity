@@ -8,7 +8,7 @@ namespace Apparatys.Navigator
     {
         private Dictionary<UIHandle, BaseUIView> m_ViewLookup = new Dictionary<UIHandle, BaseUIView>();
 
-        private Stack<BaseUIView> m_NavigationStack = new Stack<BaseUIView>();
+        private List<BaseUIView> m_NavigationStack = new List<BaseUIView>();
 
         private BaseUIView CurrentDialog
         {
@@ -16,7 +16,7 @@ namespace Apparatys.Navigator
             {
                 if (m_NavigationStack.Count > 0)
                 {
-                    return m_NavigationStack.Peek();
+                    return PeekViewStack();
                 }
 
                 return null;
@@ -26,13 +26,14 @@ namespace Apparatys.Navigator
         public void ClearViews()
         {
             Debug.Log("UIManager::ClearViews()");
-            // Hide all the view
+
+            // Hide all the views.
             foreach (BaseUIView view in m_ViewLookup.Values)
             {
                 view?.Hide();
             }
 
-            // Clear the nav stack
+            // Clear the nav stack.
             m_NavigationStack.Clear();
         }
 
@@ -40,13 +41,12 @@ namespace Apparatys.Navigator
         {
             if (!PopInvalidViews())
             {
-                // Pop the current view
+                // Pop the current view.
                 CurrentDialog?.Hide();
-                m_NavigationStack.Pop();
+                PopViewStack();
             }
 
-            PopInvalidViews();
-            CurrentDialog?.Show();
+            RestoreStackVisibility();
         }
 
         public void Register(IEnumerable<BaseUIView> views)
@@ -88,12 +88,26 @@ namespace Apparatys.Navigator
 
             if ((view != null) && (view != CurrentDialog))
             {
+                if (view.HideUnderlying)
+                {
+                    for (int i = m_NavigationStack.Count - 1; i >= 0; --i)
+                    {
+                        m_NavigationStack[i].Hide();
+
+                        if (m_NavigationStack[i].HideUnderlying)
+                        {
+                            // Further views should already be hidden; no need to continue.
+                            break;
+                        }
+                    }
+                }
+
                 view.Controller = controller;
                 view.Show();
 
                 if (view.PushToNavigationStack && CurrentDialog != view)
                 {
-                    m_NavigationStack.Push(view);
+                    m_NavigationStack.Add(view);
                 }
             }
 
@@ -111,19 +125,46 @@ namespace Apparatys.Navigator
             }
         }
 
+        private BaseUIView PeekViewStack()
+        {
+            return m_NavigationStack[m_NavigationStack.Count - 1];
+        }
+
         private bool PopInvalidViews()
         {
             bool popped = false;
 
-            while (m_NavigationStack.Peek() == null || !m_ViewLookup.ContainsKey(m_NavigationStack.Peek().Handle))
+            BaseUIView currentView = PeekViewStack();
+            while (currentView == null || !m_ViewLookup.ContainsKey(currentView.Handle))
             {
                 // Pop destroyed or unregistered views from the top of the stack
                 Debug.Log("UIManager::PopInvalidViews() -- null or view not found in lookup");
-                m_NavigationStack.Pop();
+                PopViewStack();
                 popped = true;
             }
 
             return popped;
+        }
+
+        private void PopViewStack()
+        {
+            m_NavigationStack.RemoveAt(m_NavigationStack.Count - 1);
+        }
+
+        private void RestoreStackVisibility()
+        {
+            PopInvalidViews();
+
+            for (int i = m_NavigationStack.Count - 1; i >= 0; --i)
+            {
+                m_NavigationStack[i].Show();
+
+                if (m_NavigationStack[i].HideUnderlying)
+                {
+                    // Everything under this view should remain hidden, so we can stop traversing.
+                    break;
+                }
+            }
         }
     }
 }
