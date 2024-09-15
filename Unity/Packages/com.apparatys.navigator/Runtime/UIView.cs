@@ -6,7 +6,7 @@ namespace Apparatys.Navigator
     {
         private ControllerType m_Controller;
 
-        public override IUIController Controller
+        public sealed override IUIController Controller
         {
             get
             {
