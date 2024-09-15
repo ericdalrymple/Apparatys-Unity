@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Apparatys.Dependencies
 {
-    public class DependencyManager
+    public static class DependencyManager
     {
         private static Dictionary<Type, IDependable> m_Dependables = new Dictionary<Type, IDependable>();
 
@@ -21,14 +21,14 @@ namespace Apparatys.Dependencies
             return result;
         }
 
-        internal void ReportDependency()
+        internal static void ReportDependency()
         {
 
         }
 
-        internal void Register(IDependable dependable)
+        public static void Register<T>(T dependable) where T : IDependable
         {
-            m_Dependables.Add(dependable.GetType(), dependable);
+            m_Dependables.Add(typeof(T), dependable);
         }
     }
 }
