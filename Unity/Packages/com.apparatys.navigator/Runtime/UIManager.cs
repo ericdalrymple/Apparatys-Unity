@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -35,6 +36,17 @@ namespace Apparatys.Navigator
 
             // Clear the nav stack.
             m_NavigationStack.Clear();
+        }
+
+        public void HideView(UIHandle handle)
+        {
+            if ((handle == null) || (m_NavigationStack.Count == 0))
+            {
+                return;
+            }
+
+            BaseUIView view = m_NavigationStack.FindLast(x => x.Handle == handle);
+            view.Hide();
         }
 
         public void NavigateBack()
