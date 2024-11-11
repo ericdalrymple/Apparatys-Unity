@@ -10,6 +10,10 @@ namespace Apparatys.Navigator
 
         [SerializeField]
         [Tooltip("Whether to hide underlying views when this view is shown.")]
+        private bool m_HideOnOverlap = false;
+
+        [SerializeField]
+        [Tooltip("Whether to hide underlying views when this view is shown.")]
         private bool m_HideUnderlying = true;
 
         [SerializeField]
@@ -31,6 +35,11 @@ namespace Apparatys.Navigator
         public bool PushToNavigationStack
         {
             get { return m_PushToNavigationStack; }
+        }
+
+        public bool HideOnOverlap
+        {
+            get { return m_HideOnOverlap; }
         }
 
         public bool HideUnderlying
